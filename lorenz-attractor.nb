@@ -1,0 +1,147 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 12.2' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      4564,        139]
+NotebookOptionsPosition[      4207,        125]
+NotebookOutlinePosition[      4610,        141]
+CellTagsIndexPosition[      4567,        138]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"s", "=", 
+   RowBox[{"NDSolve", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{
+        RowBox[{
+         RowBox[{
+          RowBox[{"Derivative", "[", "1", "]"}], "[", "x", "]"}], "[", "t", 
+         "]"}], "\[Equal]", 
+        RowBox[{
+         RowBox[{"-", "3"}], " ", 
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{"x", "[", "t", "]"}], "-", 
+           RowBox[{"y", "[", "t", "]"}]}], ")"}]}]}], ",", 
+       RowBox[{
+        RowBox[{
+         RowBox[{
+          RowBox[{"Derivative", "[", "1", "]"}], "[", "y", "]"}], "[", "t", 
+         "]"}], "\[Equal]", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"-", 
+           RowBox[{"x", "[", "t", "]"}]}], " ", 
+          RowBox[{"z", "[", "t", "]"}]}], "+", 
+         RowBox[{"26.5", " ", 
+          RowBox[{"x", "[", "t", "]"}]}], "-", 
+         RowBox[{"y", "[", "t", "]"}]}]}], ",", 
+       RowBox[{
+        RowBox[{
+         RowBox[{
+          RowBox[{"Derivative", "[", "1", "]"}], "[", "z", "]"}], "[", "t", 
+         "]"}], "\[Equal]", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"x", "[", "t", "]"}], " ", 
+          RowBox[{"y", "[", "t", "]"}]}], "-", 
+         RowBox[{"z", "[", "t", "]"}]}]}], ",", 
+       RowBox[{
+        RowBox[{"x", "[", "0", "]"}], "\[Equal]", 
+        RowBox[{"z", "[", "0", "]"}], "\[Equal]", "0"}], ",", 
+       RowBox[{
+        RowBox[{"y", "[", "0", "]"}], "\[Equal]", "1"}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"x", ",", "y", ",", "z"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"t", ",", "0", ",", "400"}], "}"}], ",", 
+     RowBox[{"MaxSteps", "\[Rule]", "\[Infinity]"}]}], "]"}]}], ";"}], "\n", 
+ RowBox[{"Show", "[", 
+  RowBox[{
+   RowBox[{"ParametricPlot3D", "[", 
+    RowBox[{
+     RowBox[{"Evaluate", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"x", "[", "t", "]"}], ",", 
+         RowBox[{"y", "[", "t", "]"}], ",", 
+         RowBox[{"z", "[", "t", "]"}]}], "}"}], "/.", " ", "s"}], "]"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"t", ",", "0", ",", "400"}], "}"}], ",", 
+     RowBox[{"PlotPoints", "\[Rule]", "1000"}], ",", 
+     RowBox[{"PlotStyle", "\[Rule]", 
+      RowBox[{"Directive", "[", 
+       RowBox[{"Thick", ",", 
+        RowBox[{"RGBColor", "[", 
+         RowBox[{".8", ",", "0", ",", "0"}], "]"}]}], "]"}]}], ",", 
+     RowBox[{"ColorFunction", "\[Rule]", 
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"ColorData", "[", 
+         RowBox[{"\"\<SolarColors\>\"", ",", "#4"}], "]"}], "&"}], ")"}]}]}], 
+    "]"}], ",", 
+   RowBox[{"Graphics3D", "[", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"ColorData", "[", "\"\<SolarColors\>\"", "]"}], "[", "0", 
+       "]"}], ",", 
+      RowBox[{"Sphere", "[", 
+       RowBox[{
+        RowBox[{"First", "[", 
+         RowBox[{
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{"{", 
+             RowBox[{
+              RowBox[{"x", "[", "t", "]"}], ",", 
+              RowBox[{"y", "[", "t", "]"}], ",", 
+              RowBox[{"z", "[", "t", "]"}]}], "}"}], "/.", " ", "s"}], ")"}], 
+          "/.", " ", 
+          RowBox[{"t", "\[Rule]", "0"}]}], "]"}], ",", ".75"}], "]"}]}], 
+     "}"}], "]"}], ",", 
+   RowBox[{"RotationAction", "\[Rule]", "\"\<Clip\>\""}], ",", 
+   RowBox[{"Boxed", "\[Rule]", "False"}], ",", 
+   RowBox[{"SphericalRegion", "\[Rule]", "False"}], ",", 
+   RowBox[{"Axes", "\[Rule]", "False"}], ",", 
+   RowBox[{"ImageSize", "\[Rule]", "500"}]}], "]"}]}], "Input",
+ CellChangeTimes->{{3.820401409873878*^9, 
+  3.8204014098908606`*^9}},ExpressionUUID->"9bd28891-f9cc-48ca-8a58-\
+2e950dc8974b"]
+},
+WindowSize->{1920, 997},
+WindowMargins->{{-8, Automatic}, {Automatic, -8}},
+FrontEndVersion->"12.2 for Microsoft Windows (64-bit) (December 12, 2020)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"c77ef865-2eb5-4462-b28c-2da3731a4f1f"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 3645, 103, 119, "Input",ExpressionUUID->"9bd28891-f9cc-48ca-8a58-2e950dc8974b"]
+}
+]
+*)
+
